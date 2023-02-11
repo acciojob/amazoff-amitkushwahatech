@@ -40,21 +40,23 @@ public class OrderRepository {
 
     public Order getOrderById(String orderId) {
         // order should be returned with an orderId.
-        for (String s : orderDb.keySet()) {
-            if (s.equals(orderId)) {
-                return orderDb.get(s);
-            }
-        }
-        return null;
+//        for (String s : orderDb.keySet()) {
+//            if (s.equals(orderId)) {
+//                return orderDb.get(s);
+//            }
+//        }
+//        return null;
+        return orderDb.getOrDefault(orderId,null);
     }
 
     public DeliveryPartner getPartnerById(String partnerId) {
         // deliveryPartner should contain the value given by partnerId
 
-        if (partnerDb.containsKey(partnerId)) {
-            return partnerDb.get(partnerId);
-        }
-        return null;
+//        if (partnerDb.containsKey(partnerId)) {
+//            return partnerDb.get(partnerId);
+//        }
+        return partnerDb.getOrDefault(partnerId,null);
+//        return null;
 
     }
 
